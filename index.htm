@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inove Cloud | Desenvolvimento de Software e Soluções em Nuvem</title>
+  <meta name="description"
+    content="A Inove Cloud Assessoria Ltda atua com desenvolvimento de software, computação em nuvem e engenharia de dados para apoiar empresas em iniciativas de transformação digital." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#2f93d6" />
+  <link rel="canonical" href="https://inove.cloud/" />
+  <style>
+    :root {
+      --primary: #2f93d6;
+      --primary-dark: #1f6fa4;
+      --text: #223042;
+      --muted: #5b6777;
+      --line: #e8eef5;
+      --bg: #ffffff;
+      --soft: #f7fbff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .2px;
+      color: var(--text);
+    }
+
+    .brand small {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eaf5fe;
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 34px);
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero p {
+      max-width: 760px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 1px solid var(--primary);
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      background: #fff;
+      color: var(--primary-dark);
+      border-color: #cfe3f4;
+    }
+
+    .hero-card,
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(34, 48, 66, 0.05);
+    }
+
+    .hero-card h3,
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .checklist {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .checklist li {
+      margin-bottom: 10px;
+    }
+
+    section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card p,
+    .card li,
+    .card strong {
+      font-size: 16px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .list li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background: var(--soft);
+    }
+
+    .company-data {
+      display: grid;
+      gap: 10px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .company-data strong {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 32px 0 56px;
+      background: #fff;
+    }
+
+    .footer-box {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      background: #fff;
+    }
+
+    .footer-title {
+      font-weight: 800;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .copyright {
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        Inove Cloud
+        <small>INOVE CLOUD ASSESSORIA LTDA</small>
+      </div>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#empresa">Empresa</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Desenvolvimento de software • Cloud • Dados</span>
+          <h1>Inovação e transformação digital com base sólida, execução técnica e visão de produto.</h1>
+          <p>
+            A <strong>Inove</strong> atua com <strong>desenvolvimento de software</strong>,
+            <strong>computação em nuvem</strong> e <strong>engenharia de dados</strong> para apoiar empresas em
+            iniciativas
+            de transformação digital, evolução de produtos e modernização de ambientes tecnológicos.
+          </p>
+          <p>
+            Projetamos, construímos e operamos soluções escaláveis — do backend ao frontend, de pipelines de dados à
+            infraestrutura como código — com foco em qualidade, performance, segurança e continuidade operacional.
+          </p>
+          <div class="actions">
+            <a class="button" href="mailto:contato@inove.cloud">Falar com a Inove Cloud</a>
+            <a class="button secondary" href="#empresa">Ver dados da empresa</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumo institucional">
+          <h3>Resumo institucional</h3>
+          <ul class="checklist">
+            <li>Empresa brasileira formalizada com CNPJ ativo.</li>
+            <li>Atuação em software, nuvem e dados.</li>
+            <li>Atendimento por e-mail corporativo no domínio inove.cloud.</li>
+            <li>Presença institucional voltada a serviços de tecnologia.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <div class="section-header">
+          <h2>Sobre a empresa</h2>
+          <p>
+            A Inove Cloud foi criada para apoiar negócios que precisam acelerar sua operação digital com mais estrutura,
+            clareza técnica e capacidade de execução. Nossa atuação combina software, cloud e dados para transformar
+            necessidades reais em soluções sustentáveis.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>O que fazemos</h3>
+            <p>
+              Atuamos na análise, planejamento, construção e sustentação de soluções digitais, com foco em arquitetura,
+              integração, automação e confiabilidade operacional.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Como atuamos</h3>
+            <p>
+              Trabalhamos com abordagem consultiva e execução prática, apoiando desde iniciativas em fase inicial até
+              ambientes que exigem evolução técnica, ganho de escala e modernização contínua.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="highlight">
+      <div class="container">
+        <div class="section-header">
+          <h2>Serviços</h2>
+          <p>Frentes de atuação da Inove Cloud em projetos de tecnologia e transformação digital.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Desenvolvimento de software</h3>
+            <ul class="list">
+              <li>Aplicações web e APIs</li>
+              <li>Sistemas sob medida</li>
+              <li>Integrações entre plataformas</li>
+              <li>Manutenção e evolução de produtos</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Computação em nuvem</h3>
+            <ul class="list">
+              <li>Arquitetura em cloud</li>
+              <li>Infraestrutura como código</li>
+              <li>Automação de ambientes</li>
+              <li>Observabilidade e confiabilidade</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Dados e operação</h3>
+            <ul class="list">
+              <li>Pipelines de dados</li>
+              <li>Organização de fluxos operacionais</li>
+              <li>Modernização de processos técnicos</li>
+              <li>Apoio à escalabilidade de soluções</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="atuacao">
+      <div class="container">
+        <div class="section-header">
+          <h2>Forma de atuação</h2>
+          <p>
+            A Inove Cloud atende demandas relacionadas à construção, modernização e sustentação de soluções digitais,
+            apoiando empresas que precisam evoluir produtos, ambientes e processos com base técnica consistente.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Arquitetura e estruturação</h3>
+            <p>Definição de bases técnicas para software, nuvem e integrações com foco em crescimento sustentável.</p>
+          </article>
+          <article class="card">
+            <h3>Entrega e evolução</h3>
+            <p>Construção e melhoria contínua de soluções, com visão prática sobre performance, segurança e operação.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Continuidade operacional</h3>
+            <p>Apoio à estabilidade e à sustentação de ambientes, reduzindo riscos técnicos e gargalos operacionais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="empresa" class="highlight">
+      <div class="container">
+        <div class="section-header">
+          <h2>Dados da empresa</h2>
+          <p>Informações institucionais e de contato vinculadas ao domínio inove.cloud.</p>
+        </div>
+
+        <div class="card company-data">
+          <div><strong>Razão social:</strong> INOVE CLOUD ASSESSORIA LTDA</div>
+          <div><strong>Nome fantasia:</strong> Inove Cloud</div>
+          <div><strong>CNPJ:</strong> 59.584.603/0001-20</div>
+          <div><strong>Endereço:</strong> Rua Salvador Camargo, 302, Casa 1 – Vila São Paulo, Ferraz de Vasconcelos – SP
+            – CEP 08506-110</div>
+          <div><strong>E-mail:</strong> <a href="mailto:contato@inove.cloud">contato@inove.cloud</a></div>
+          <div><strong>Site:</strong> <a href="https://inove.cloud/">https://inove.cloud/</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contato</h2>
+          <p>
+            Para contato institucional e comercial, utilize o canal oficial abaixo vinculado ao domínio da empresa.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Canal oficial</h3>
+            <p><strong>E-mail:</strong> <a href="mailto:contato@inove.cloud">contato@inove.cloud</a></p>
+            <p>Atendimento por contato institucional sob demanda.</p>
+          </article>
+          <article class="card">
+            <h3>Presença digital</h3>
+            <p>O domínio oficial da empresa é <a href="https://inove.cloud/">inove.cloud</a>.</p>
+            <p>Este site apresenta informações institucionais, frentes de atuação e dados cadastrais da empresa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-box">
+        <div class="footer-title">INOVE CLOUD ASSESSORIA LTDA</div>
+        <div class="company-data">
+          <div><strong>CNPJ:</strong> 59.584.603/0001-20</div>
+          <div><strong>Endereço:</strong> Rua Salvador Camargo, 302, Casa 1 – Vila São Paulo, Ferraz de Vasconcelos – SP
+            – CEP 08506-110</div>
+          <div><strong>E-mail:</strong> <a href="mailto:contato@inove.cloud">contato@inove.cloud</a></div>
+        </div>
+        <div class="copyright">© <span id="year"></span> Inove Cloud. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "legalName": "INOVE CLOUD ASSESSORIA LTDA",
+    "name": "Inove Cloud",
+    "url": "https://inove.cloud/",
+    "email": "contato@inove.cloud",
+    "taxID": "59.584.603/0001-20",
+    "description": "Empresa brasileira de tecnologia com atuação em desenvolvimento de software, computação em nuvem e engenharia de dados.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Salvador Camargo, 302, Casa 1 – Vila São Paulo",
+      "addressLocality": "Ferraz de Vasconcelos",
+      "addressRegion": "SP",
+      "postalCode": "08506-110",
+      "addressCountry": "BR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contato@inove.cloud",
+      "areaServed": "BR"
+    }
+  }
+  </script>
+</body>
+
+</html>
